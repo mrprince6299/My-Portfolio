@@ -1,0 +1,120 @@
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Canvas Background & Hero Wrapper */
+.three-hero-bg-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+}
+
+.three-hero-bg-wrapper.hero-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.three-hero-bg-wrapper.hero-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#three-starfield-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+}
+
+#three-starfield-canvas.starfield-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#three-starfield-canvas.starfield-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#webgl-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 64%,
+      rgba(5, 5, 5, 0.32) 84%,
+      #050505 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* A static, compositor-friendly sheen gives the hero its premium glow without
+   adding any work to the raymarch shader. It is deliberately off in Orbit Mode
+   because that mode already enables real bloom. */
+.bg-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 48% 43% at 50% 42%,
+      rgba(255, 174, 73, 0.14) 0%,
+      rgba(255, 130, 28, 0.055) 36%,
+      transparent 72%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  transition: opacity 0.35s ease;
+}
+
+.bg-overlay.orbit-active::before {
+  opacity: 0;
+}
+
+/* Scroll Hints */
+.scroll-hint {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+.scroll-hint-bottom {
+  margin-bottom: 2rem;
+  padding-bottom: 4rem;
+}
+
+.scroll-arrow {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}

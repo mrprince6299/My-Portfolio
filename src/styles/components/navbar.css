@@ -1,0 +1,388 @@
+/* Floating Glass Dock Navigation */
+nav.dock-mode {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: fit-content;
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+nav.dock-mode.nav-visible,
+.nav-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+nav.dock-mode.nav-hidden,
+.nav-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-28px) scale(0.96);
+  pointer-events: none;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Interactive Direct Letter Focus Magnifier */
+.convex-word {
+  display: inline-flex;
+  align-items: center;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+.convex-char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  padding: 0.2rem 0.05em;
+  transition: transform 0.22s cubic-bezier(0.2, 1.15, 0.4, 1),
+              color 0.18s ease,
+              text-shadow 0.22s ease,
+              opacity 0.18s ease;
+  transform-origin: center center;
+  will-change: transform;
+  cursor: pointer;
+}
+
+/* 1. The exact letter being hovered/focused gets BIG */
+.convex-char:hover {
+  transform: translateY(-4px) scale(1.42) translateZ(20px);
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.95), 0 0 26px rgba(255, 255, 255, 0.5);
+  z-index: 10;
+  position: relative;
+}
+
+/* 2. Immediate next neighbor scales slightly */
+.convex-char:hover + .convex-char {
+  transform: translateY(-2px) scale(1.18) translateZ(10px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  z-index: 5;
+  position: relative;
+}
+
+/* 3. Immediate previous neighbor scales slightly */
+.convex-char:has(+ .convex-char:hover) {
+  transform: translateY(-2px) scale(1.18) translateZ(10px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  z-index: 5;
+  position: relative;
+}
+
+.nav-link svg {
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover svg {
+  transform: translateY(2px);
+}
+
+
+
+nav.dock-mode .nav-inner {
+  padding: 0 1.5rem;
+  gap: 3rem;
+  height: 3.5rem;
+}
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .sound-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: inherit;
+  }
+
+  .desktop-resume-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mobile-brand-link {
+    display: none;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+  }
+
+  .hamburger-bar {
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+    transform-origin: center;
+  }
+
+  .hamburger-bar.open.top {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .hamburger-bar.open.bot {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+@media (max-width: 768px) {
+  .nav-links,
+  .desktop-resume-link {
+    display: none !important;
+  }
+
+  .mobile-brand-link {
+    display: inline-flex;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  nav.dock-mode {
+    width: calc(100% - 2.5rem);
+    max-width: 440px;
+    top: 1rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  nav.dock-mode .nav-inner {
+    padding: 0 0.8rem;
+    justify-content: space-between;
+    height: 3.25rem;
+    gap: 0;
+  }
+
+  .nav-actions {
+    gap: 1rem;
+  }
+}
+
+.hero-logo {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero-logo.fade-in {
+  opacity: 1;
+}
+
+.hero-logo.fade-out {
+  opacity: 0;
+}
+
+/* ==========================================================================
+   Mobile Full-Screen Navigation Drawer
+   ========================================================================== */
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(5, 5, 8, 0.97);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.25rem 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px) scale(0.98);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-drawer.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-drawer-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.mobile-drawer-close {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.mobile-drawer-close:hover,
+.mobile-drawer-close:active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  transform: rotate(90deg);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  gap: 0.25rem;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.25s ease, padding-left 0.25s ease;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:active,
+.mobile-nav-item.active {
+  transform: translateX(8px);
+  color: #fff;
+}
+
+.mobile-nav-num {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  min-width: 2rem;
+}
+
+.mobile-nav-label {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  flex-grow: 1;
+}
+
+.mobile-nav-indicator {
+  color: #fff;
+  font-size: 0.75rem;
+  text-shadow: 0 0 10px #fff;
+}
+
+.mobile-drawer-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.mobile-resume-btn:hover,
+.mobile-resume-btn:active {
+  background: #fff;
+  color: #050505;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.mobile-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
