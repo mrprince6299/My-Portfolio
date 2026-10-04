@@ -15,33 +15,40 @@ A high-performance, creative agency-grade developer portfolio architected with *
 
 ## 🌟 Visual Tour & Interface Highlights
 
-### 1. Raymarched Event Horizon & 3D Wireframe Globe
-A custom GPU raymarched black hole accretion disk with relativistic Doppler beaming, dynamic inclination mouse parallax, and an interactive 3D Orbit exploration mode.
-![3D Event Horizon Hero](public/screenshots/01-hero-accels.png)
+### 1. Immersive Hero & Raymarched Black Hole
+A cinematic hero experience featuring the raymarched black hole, interactive 3D globe, creative developer presentation, and Mithilesh Kumar's AI-Native Full Stack Developer identity.
 
-### 2. Engineering Philosophy & Real-Time Telemetry Deck
-Overview of decoupled architectural design principles paired with a verified telemetry command deck for GitHub repositories, LinkedIn profiles, and live sprint activities.
-![About & Engineering Telemetry](public/screenshots/02-engineering-telemetry.png)
+![Mithilesh Portfolio Hero](public/screenshots/01-home.png)
 
-### 3. Engineering Journey & Interactive 2D Canvas Simulations
-A four-stage evolution roadmap featuring real-time interactive HTML5 Canvas visualizers demonstrating DOM hierarchy, WebSocket packet transmission, token streaming, and distributed edge cloud architectures.
-![Engineering Journey Roadmap](public/screenshots/03-evolution-roadmap.png)
+### 2. About Me & Developer Profile
+A personal developer profile introducing Mithilesh Kumar, his background, technical interests, and hands-on approach to building practical digital solutions.
 
-### 4. Deep-Dive Case Studies & Feature Showcase
-Editorial project presentations highlighting problem statements, algorithmic solutions, key capabilities, and direct links to live edge deployments.
-![Case Study Overview & Gallery](public/screenshots/04-case-study-overview.png)
+![About Mithilesh Kumar](public/screenshots/02-about.png)
 
-### 5. Decoupled Distributed Architecture Flows
-Interactive multi-tier architecture diagrams illustrating client presentation layers, edge gateways, authentication boundaries (OAuth 2.0 PKCE), and backend microservices.
-![Distributed Architecture Flow](public/screenshots/05-distributed-architecture.png)
+### 3. Education & Engineering Journey
+An interactive timeline presenting Mithilesh Kumar's academic journey, development progression, and evolving focus across full-stack development, AI, cloud, and IoT.
 
-### 6. 360° Cylindrical Capabilities Deck
-A trigonometric 3D orbital cylinder displaying core engineering competencies, featuring continuous auto-rotation, Gaussian depth-blur falloff, and touch/wheel drag navigation.
-![360 Degree Skills Cylinder](public/screenshots/06-skills-360-deck.png)
+![Education and Engineering Journey](public/screenshots/03-education-journey.png)
 
-### 7. Cosmic Monolith Message Beacon & Flight Sequencer
-A glassmorphic transmission transponder equipped with dynamic input signal integrity scoring and an edge-delivered rocket launch sequence connecting to the Resend API.
-![Cosmic Monolith Transponder](public/screenshots/07-contact-monolith.png)
+### 4. Selected Projects & Product Showcase
+A showcase of Mithilesh Kumar's featured projects, including Team Discovery, Shivalik Innovation Hub, and EventFlow.
+
+![Selected Projects](public/screenshots/04-projects.png)
+
+### 5. Team Discovery — System Architecture
+A deeper view of Team Discovery, demonstrating its product experience and system architecture for skill-based teammate matching.
+
+![Team Discovery System Architecture](public/screenshots/05-team-discovery.png)
+
+### 6. Core Capabilities & Technical Skills
+An interactive 360° skills experience covering Mithilesh Kumar's programming, frontend, backend, cloud, AI, databases, and IoT capabilities.
+
+![Core Technical Skills](public/screenshots/06-skills.png)
+
+### 7. Contact & Direct Message Experience
+The portfolio's interactive contact experience for directly connecting with Mithilesh Kumar through the deployed message delivery system.
+
+![Contact Mithilesh Kumar](public/screenshots/07-contact.png)
 
 ---
 
