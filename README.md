@@ -9,7 +9,6 @@
 
 A high-performance, creative agency-grade developer portfolio architected with **React 19**, custom **WebGL GLSL shaders**, **GSAP ScrollTrigger**, and smooth momentum physics. Deployed globally to **Cloudflare Workers** with edge-native serverless microservices.
 
-*(Adapted from open-source portfolio by Dinesh S under the Apache-2.0 License).*
 
 ---
 
