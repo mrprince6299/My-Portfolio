@@ -7,31 +7,41 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-Edge_Runtime-F38020?logo=cloudflare)](https://workers.cloudflare.com/)
 [![Lenis Scroll](https://img.shields.io/badge/Lenis-Smooth_Scroll-black)](https://github.com/darkroomengineering/lenis)
 
-A modern, high-performance developer portfolio built with **React 19**, custom **WebGL GLSL raymarching shaders**, **GSAP ScrollTrigger**, and smooth momentum physics. Deployed globally to **Cloudflare Workers** with edge-native serverless functions.
+A high-performance, creative agency-grade developer portfolio architected with **React 19**, custom **WebGL GLSL shaders**, **GSAP ScrollTrigger**, and smooth momentum physics. Deployed globally to **Cloudflare Workers** with edge-native serverless microservices.
 
-🔗 **Live Portfolio:** [https://portfolio.mithileshkumarpatel568900.workers.dev](https://portfolio.mithileshkumarpatel568900.workers.dev)
-
----
-
-## 👨‍💻 About Me
-
-I’m **Mithilesh Kumar**, an AI-Native Full Stack Developer and BCA student passionate about building modern, practical, and user-focused digital solutions. I enjoy working across web development, backend technologies, databases, IoT, and AI/ML to turn ideas into functional products.
-
-I’m particularly interested in solving real-world problems through technology and continuously improving my skills by building projects, exploring new technologies, and participating in innovative technical work.
-
-Currently, I’m expanding my expertise in modern JavaScript technologies, React, Next.js, databases, cloud platforms, and AI/ML while continuing to build and experiment with new ideas.
+*(Adapted from open-source portfolio by Dinesh S under the Apache-2.0 License).*
 
 ---
 
 ## 🌟 Visual Tour & Interface Highlights
 
-- **Raymarched Event Horizon & 3D Wireframe Globe:** A custom GPU raymarched black hole accretion disk with relativistic Doppler beaming, dynamic inclination mouse parallax, and an interactive 3D Orbit exploration mode.
-- **Engineering Philosophy & Real-Time Telemetry Deck:** Overview of architectural design principles paired with a verified telemetry command deck showcasing GitHub repositories, LinkedIn profiles, and live development activity.
-- **Engineering Journey & Interactive 2D Canvas Simulations:** A four-stage evolution roadmap featuring real-time interactive HTML5 Canvas visualizers demonstrating DOM hierarchy, WebSocket packet transmission, token streaming, and distributed edge architectures.
-- **Deep-Dive Case Studies & Feature Showcase:** Editorial project presentations highlighting problem statements, algorithmic solutions, key capabilities, and direct links to live deployments.
-- **Decoupled Distributed Architecture Flows:** Interactive multi-tier architecture diagrams illustrating client presentation layers, edge gateways, authentication boundaries, and backend services.
-- **360° Cylindrical Capabilities Deck:** A trigonometric 3D orbital cylinder displaying core technical competencies, featuring continuous auto-rotation, Gaussian depth-blur falloff, and touch/wheel drag navigation.
-- **Cosmic Monolith Message Beacon & Flight Sequencer:** A glassmorphic transmission transponder equipped with dynamic input signal integrity scoring and an edge-delivered rocket launch sequence connecting to the Resend API.
+### 1. Raymarched Event Horizon & 3D Wireframe Globe
+A custom GPU raymarched black hole accretion disk with relativistic Doppler beaming, dynamic inclination mouse parallax, and an interactive 3D Orbit exploration mode.
+![3D Event Horizon Hero](public/screenshots/01-hero-accels.png)
+
+### 2. Engineering Philosophy & Real-Time Telemetry Deck
+Overview of decoupled architectural design principles paired with a verified telemetry command deck for GitHub repositories, LinkedIn profiles, and live sprint activities.
+![About & Engineering Telemetry](public/screenshots/02-engineering-telemetry.png)
+
+### 3. Engineering Journey & Interactive 2D Canvas Simulations
+A four-stage evolution roadmap featuring real-time interactive HTML5 Canvas visualizers demonstrating DOM hierarchy, WebSocket packet transmission, token streaming, and distributed edge cloud architectures.
+![Engineering Journey Roadmap](public/screenshots/03-evolution-roadmap.png)
+
+### 4. Deep-Dive Case Studies & Feature Showcase
+Editorial project presentations highlighting problem statements, algorithmic solutions, key capabilities, and direct links to live edge deployments.
+![Case Study Overview & Gallery](public/screenshots/04-case-study-overview.png)
+
+### 5. Decoupled Distributed Architecture Flows
+Interactive multi-tier architecture diagrams illustrating client presentation layers, edge gateways, authentication boundaries (OAuth 2.0 PKCE), and backend microservices.
+![Distributed Architecture Flow](public/screenshots/05-distributed-architecture.png)
+
+### 6. 360° Cylindrical Capabilities Deck
+A trigonometric 3D orbital cylinder displaying core engineering competencies, featuring continuous auto-rotation, Gaussian depth-blur falloff, and touch/wheel drag navigation.
+![360 Degree Skills Cylinder](public/screenshots/06-skills-360-deck.png)
+
+### 7. Cosmic Monolith Message Beacon & Flight Sequencer
+A glassmorphic transmission transponder equipped with dynamic input signal integrity scoring and an edge-delivered rocket launch sequence connecting to the Resend API.
+![Cosmic Monolith Transponder](public/screenshots/07-contact-monolith.png)
 
 ---
 
@@ -39,7 +49,7 @@ Currently, I’m expanding my expertise in modern JavaScript technologies, React
 
 ### 🪐 1. Raymarched WebGL Accretion Disk (`ThreeBackground.jsx`)
 - **Custom GLSL Shader Pipeline:** Implements volumetric raymarching for black hole gravitational lensing, dynamic Doppler color shifting, differential accretion disk rotation, and procedural starlight dust.
-- **Hardware-Adaptive Performance:** Automatically queries `navigator.hardwareConcurrency` and `navigator.deviceMemory` to adjust raymarching steps (`120` on low-power devices vs. `200` on desktop).
+- **Hardware-Adaptive Performance:** Automatically queries `navigator.hardwareConcurrency` and `navigator.deviceMemory` to dial raymarching steps (`120` on low-power mobile vs. `200` on desktop).
 - **Zero-Overhead Viewport Throttling:** When scrolling past the hero or navigating to inner routes, the render loop pauses entirely, freeing 100% of GPU resources.
 - **Interactive OrbitControls Mode:** Double-clicking triggers an orbit camera mode with high-dynamic-range bloom post-processing and smooth damping.
 
@@ -57,7 +67,7 @@ Currently, I’m expanding my expertise in modern JavaScript technologies, React
 
 ### 🌀 4. 360° Cylindrical Skills Deck (`Skills.jsx`)
 - **Trigonometric Orbit Math:** Calculates 3D Cartesian coordinates (`X = sin(θ)`, `Z = cos(θ)`) along a virtual cylinder.
-- **Dynamic Depth Hierarchy:** Front cards maintain crystal clarity (`scale: 1.05`), while background cards seamlessly scale down (`scale: 0.64`) with smooth CSS Gaussian blur (`0px` to `4px`) and strict z-index depth sorting.
+- **Dynamic Depth Hierarchy:** Front cards maintain 100% crystal clarity (`scale: 1.05`), while background cards seamlessly scale down (`scale: 0.64`) with smooth CSS Gaussian blur (`0px` to `4px`) and strict z-index depth sorting.
 - **Multi-Input Controls:** Supports touch drag, mouse dragging, trackpad horizontal wheel manipulation, and auto-running idle loops.
 
 ### 🔊 5. Procedural Audio Synthesis (`useAudio.js`)
@@ -88,9 +98,12 @@ Currently, I’m expanding my expertise in modern JavaScript technologies, React
 ## 📂 Repository Structure
 
 ```text
-My-Portfolio/
+portfolio/
 ├── dist/                          # Production build output
-├── public/                        # Static edge assets (favicon, manifest)
+├── functions/                     # Legacy Cloudflare Pages Functions (if needed)
+├── public/                        # Static edge assets
+│   ├── screenshots/               # High-res UI documentation screenshots
+│   └── favicon.svg                # Vector brand favicon
 ├── src/
 │   ├── assets/                    # Optimized WebP project mockups & portrait
 │   ├── components/
@@ -134,56 +147,15 @@ My-Portfolio/
 
 ---
 
-## 🚀 Featured Projects
-
-### 1. Team Discovery
-- **GitHub:** [https://github.com/mrprince6299/team-discovery](https://github.com/mrprince6299/team-discovery)
-- **Live Demo:** [https://team-discovery-opal.vercel.app/](https://team-discovery-opal.vercel.app/)
-- **Description:** A skill-based teammate matching platform built to help students find the right teammates for hackathons and technical projects. It matches candidates based on required skills, project portfolios, availability, and team requirements.
-
-### 2. Shivalik Innovation Hub
-- **Live Demo:** [https://project-d7a7e159-7fef-4a09-89b.web.app/](https://project-d7a7e159-7fef-4a09-89b.web.app/)
-- **Description:** A digital innovation platform designed to connect students with projects, ideas, events, rankings, and innovation opportunities. The platform provides dedicated spaces for project exploration, team building, pitching, and student innovation.
-
-### 3. EventFlow
-- **Live Demo:** [https://ai-project-engine.firebaseapp.com/](https://ai-project-engine.firebaseapp.com/)
-- **Description:** A modern event management platform designed to simplify event planning and participation through a centralized digital experience, with features for event organization, service providers, recommendations, and real-time planning.
-
----
-
-## 🎓 Education & Certifications
-
-- **BCA — Bachelor of Computer Applications**  
-  *Shivalik College of Engineering, Dehradun* (2024–2028)  
-  *Current Status:* 2nd Year / 3rd Semester  
-  *Expected Graduation:* 2028
-
-- **ADCA — Advanced Diploma in Computer Application**  
-  *Institute for Advanced Computer Technology (IACT)* (Completed: 2024)  
-  *Duration:* 12 months  
-  *Grade:* A (71.63%)
-
----
-
-## 💻 Technical Skills
-
-- **Programming Languages:** Java, Python, C, C++, JavaScript, HTML/CSS, SQL
-- **Frontend & UI:** React, Next.js, HTML5, CSS3, GSAP, Responsive Design
-- **Backend & Cloud Services:** Firebase, Vercel, Supabase, MongoDB, Cloudflare Workers, REST APIs
-- **Hardware & Emerging Tech:** IoT, Arduino, ESP32, AI/ML
-- **Tools & Workflow:** Git, GitHub, Vite, npm, VS Code
-
----
-
-## ⚙️ Development & Deployment
+## 🚀 Getting Started
 
 ### Prerequisites
 - **Node.js**: `v20.0.0` or higher (Node 22 LTS recommended)
 - **npm**: `v10.0.0` or higher
-- **Cloudflare Wrangler** (for local edge preview and deployment)
+- **Cloudflare Wrangler** (optional, for local edge worker preview)
 
 ### Installation
-Clone the repository and install dependencies:
+Clone the repository and install project dependencies:
 
 ```bash
 git clone https://github.com/mrprince6299/My-Portfolio.git
@@ -204,52 +176,56 @@ Start the Vite development server:
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173) in your browser to explore the portfolio.
 
-### Production Build & Edge Deployment
-Compile both the Cloudflare Worker bundle and static assets:
+---
+
+## 📦 Production Build & Edge Deployment
+
+### Build Application
+Compile both the Cloudflare Worker bundle and optimized static assets:
 
 ```bash
 npm run build
 ```
 
-Preview locally with Wrangler:
+This generates:
+- `dist/portfolio/index.js` (Compiled Edge Worker with `/api/*` routes)
+- `dist/client/` (Chunked React 19 application, vendor splits, CSS & assets)
+
+### Preview Worker Locally
+Emulate Cloudflare's edge environment with Wrangler:
 
 ```bash
 npm run preview
 ```
 
-Deploy to Cloudflare Workers:
+### Deploy to Cloudflare Workers
+Deploy the production build to your Cloudflare account:
 
 ```bash
 npm run deploy
 ```
 
-Configure your Resend secret on Cloudflare:
+To configure your Resend secret on Cloudflare:
 ```bash
 npm run secret:resend
 ```
 
 ---
 
-## 📬 Contact & Connect
+## 👨‍💻 Author & Engineering Channels
 
 **Mithilesh Kumar**  
 *AI-Native Full Stack Developer & BCA Student*
 
-- **Email:** [mithileshkumarpatel568900@gmail.com](mailto:mithileshkumarpatel568900@gmail.com)
-- **Phone / WhatsApp:** [+91 62997 59128](https://wa.me/916299759128)
-- **GitHub:** [https://github.com/mrprince6299](https://github.com/mrprince6299)
-- **LinkedIn:** [https://www.linkedin.com/in/mithilesh-kumar-860b08390/](https://www.linkedin.com/in/mithilesh-kumar-860b08390/)
-- **Live Portfolio:** [https://portfolio.mithileshkumarpatel568900.workers.dev](https://portfolio.mithileshkumarpatel568900.workers.dev)
+- **GitHub:** [@mrprince6299](https://github.com/mrprince6299)
+- **LinkedIn:** [mithilesh-kumar-860b08390](https://www.linkedin.com/in/mithilesh-kumar-860b08390/)
+- **WhatsApp:** [+91 62997 59128](https://wa.me/916299759128?text=Hi%20Mithilesh,%20saw%20your%20portfolio%20and%20wanted%20to%20connect!)
+- **Direct Email:** [mithileshkumarpatel568900@gmail.com](mailto:mithileshkumarpatel568900@gmail.com)
 
 ---
 
-## 📄 License & Attribution
-
-This project is licensed under the [Apache-2.0 License](LICENSE).  
-Adapted from an open-source template originally authored by Dinesh S under the Apache-2.0 License. All customizations, identity content, personal projects, education, and configurations represent the authentic work of Mithilesh Kumar.
-
 <div align="center">
-  <sub>© 2026 Mithilesh Kumar. All rights reserved.</sub>
+  <sub>© 2026 Mithilesh Kumar. Adapted from open-source portfolio by Dinesh S under the Apache-2.0 License. Designed with architectural precision and creative excellence.</sub>
 </div>
